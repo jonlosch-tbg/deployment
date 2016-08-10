@@ -98,7 +98,7 @@ main() {
 	echo ""
 	echo "** Merging ${GIT_TAG} to master..."
 	${git_exec} checkout master
-	${git_exec} merge -m "Merging branch ${GIT_BRANCH} to master (tag: ${GIT_TAG})"
+	${git_exec} merge -m "Merging branch ${GIT_BRANCH} to master (tag: ${GIT_TAG})" "${GIT_TAG}"
 	${git_exec} push origin master:master
 	${git_exec} tag -a ${NAME} -m "deploy ${NAME} to prod"
 	${git_exec} push origin ${NAME}
